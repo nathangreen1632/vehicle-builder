@@ -1,8 +1,8 @@
 import inquirer from 'inquirer';
-import Truck from './Truck.js';
-import Car from './Car.js';
-import Motorbike from './Motorbike.js';
-import Wheel from './Wheel.js';
+import Truck from './Truck';
+import Car from './Car';
+import Motorbike from './Motorbike';
+import Wheel from './Wheel';
 
 class Cli {
   vehicles: (Car | Truck | Motorbike)[];

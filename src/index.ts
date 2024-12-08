@@ -9,11 +9,11 @@ const vehicles = [];
 
 const truck1 = new Truck(
   Cli.generateVin(),
-  'red',
-  'Ford',
-  'F-150',
-  2021,
-  5000,
+  'Red',
+  'Toyota',
+  'Tundra TRD Off-Road',
+  2020,
+  6500,
   120,
   [],
   10000,
@@ -21,7 +21,7 @@ const truck1 = new Truck(
 
 const car1 = new Car(
   Cli.generateVin(),
-  'blue',
+  'Blue',
   'Toyota',
   'Camry',
   2021,
@@ -31,17 +31,17 @@ const car1 = new Car(
 );
 
 const motorbike1Wheels: Wheel[] = [
-  new Wheel(17, 'Michelin'),
-  new Wheel(17, 'Michelin'),
+  new Wheel(18, 'Metzeler Cruisetec'),
+  new Wheel(18, 'Metzeler Cruisetec'),
 ];
 const motorbike1 = new Motorbike(
   Cli.generateVin(),
-  'black',
+  'Black',
   'Harley Davidson',
   'Sportster',
-  2021,
-  500,
-  125,
+  2025,
+  74,
+  130,
   motorbike1Wheels,
 );
 

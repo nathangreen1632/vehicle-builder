@@ -171,10 +171,10 @@ class Cli {
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
           [
-            new Wheel(17, 'Michelin'),
-            new Wheel(17, 'Michelin'),
-            new Wheel(17, 'Michelin'),
-            new Wheel(17, 'Michelin'),
+            new Wheel(18, 'Mickey Thompson - Baja Boss'),
+            new Wheel(18, 'Mickey Thompson - Baja Boss'),
+            new Wheel(18, 'Mickey Thompson - Baja Boss'),
+            new Wheel(18, 'Mickey Thompson - Baja Boss'),
           ],
           parseInt(answers.towingCapacity),
         );
@@ -248,14 +248,8 @@ class Cli {
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
           [
-            new Wheel(
-              parseInt(answers.frontWheelDiameter),
-              answers.frontWheelBrand,
-            ),
-            new Wheel(
-              parseInt(answers.rearWheelDiameter),
-              answers.rearWheelBrand,
-            ),
+            new Wheel (18, 'Metzeler Cruistec'),
+            new Wheel (18, 'Metzeler Cruistec'),
           ],
         );
         this.vehicles.push(motorbike);

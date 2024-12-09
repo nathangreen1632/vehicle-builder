@@ -15,8 +15,9 @@ class Cli {
 
   static generateVin(): string {
     return (
-      Math.random().toString(36).substring(2, 15) +
-      Math.random().toString(36).substring(2, 15)
+      (Math.random().toString(36).substring(2, 15) +
+      Math.random().toString(36).substring(2, 15))
+      .toUpperCase()
     );
   }
 
@@ -51,7 +52,7 @@ class Cli {
         {
           type: 'list',
           name: 'vehicleType',
-          message: 'Select a vehicle type',
+          message: 'What type of vehicle would you like to create?',
           choices: ['Car', 'Truck', 'Motorbike'],
         },
       ])
@@ -170,12 +171,7 @@ class Cli {
           parseInt(answers.year),
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
-          [
-            new Wheel(18, 'Mickey Thompson - Baja Boss'),
-            new Wheel(18, 'Mickey Thompson - Baja Boss'),
-            new Wheel(18, 'Mickey Thompson - Baja Boss'),
-            new Wheel(18, 'Mickey Thompson - Baja Boss'),
-          ],
+          [],
           parseInt(answers.towingCapacity),
         );
         this.vehicles.push(truck);
@@ -374,7 +370,7 @@ class Cli {
           for (let i: number = 0; i < this.vehicles.length; i++) {
             if (this.vehicles[i].vin === this.selectedVehicleVin) {
               if (this.vehicles[i] instanceof Motorbike) {
-                (this.vehicles[i] as Motorbike).wheelie();
+                console.log((this.vehicles[i] as Motorbike).wheelie());
               } else {
                 console.log('Only motorbikes can perform a wheelie');
               }
@@ -403,7 +399,7 @@ class Cli {
           choices: ['Create a new vehicle', 'Select an existing vehicle'],
         },
       ])
-      .then((answers) => {
+      .then((answers : {CreateOrSelect :any}  ) :void => {
         // check if the user wants to create a new vehicle or select an existing vehicle
         if (answers.CreateOrSelect === 'Create a new vehicle') {
           this.createVehicle();

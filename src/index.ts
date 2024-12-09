@@ -45,7 +45,7 @@ const motorbike1 = new Motorbike(
   motorbike1Wheels,
 );
 
-console.log(motorbike1.wheelie());
+// console.log(motorbike1.wheelie());
 
 vehicles.push(truck1);
 vehicles.push(car1);

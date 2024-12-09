@@ -28,6 +28,7 @@ class Truck extends Vehicle implements AbleToTow {
     towingCapacity: number,
   ) {
     super();
+
     this.vin = vin;
     this.color = color;
     this.make = make;
@@ -38,11 +39,10 @@ class Truck extends Vehicle implements AbleToTow {
     this.wheels = wheels;
     this.towingCapacity = towingCapacity;
 
-    if (wheels.length < 4) {
-      this.wheels.push(new Wheel(17, 'Michelin'));
-      this.wheels.push(new Wheel(17, 'Michelin'));
-      this.wheels.push(new Wheel(17, 'Michelin'));
-      this.wheels.push(new Wheel(17, 'Michelin'));
+    if (wheels.length !== 4) {
+      this.wheels = [new Wheel(), new Wheel(), new Wheel(), new Wheel()];
+    } else {
+      this.wheels = wheels;
     }
   }
 
@@ -54,12 +54,31 @@ class Truck extends Vehicle implements AbleToTow {
       console.log(`Vehicle ${vehicleMake} is too heavy to be towed`);
     }
   }
+get displayWheels(): string  {
+    let wheelDetails: string = '';
+    this.wheels.forEach((wheel : Wheel, index : number) => {
+      wheelDetails += `Wheel ${index + 1}: ${wheel.getDiameter} inch with a ${wheel.getTireBrand} tire\n`;
+    });
+    return wheelDetails;
+  }
 
   override printDetails(): void {
     super.printDetails();
-    console.log(
-      `Vehicle details -  Vin: ${this.vin} Make: ${this.make} Model: ${this.model} Year: ${this.year} Weight: ${this.weight} TopSpeed: ${this.topSpeed} Color: ${this.color} TowingCapacity: ${this.towingCapacity} Wheels: ${this.wheels}`,
-    );
+
+    const vehicleDetails = {
+      vin: `VIN: ${this.vin}\n`,
+      make: `Make: ${this.make}\n`,
+      model: `Model: ${this.model}\n`,
+      year: `Year: ${this.year}\n`,
+      weight: `Weight: ${this.weight}\n`,
+      topSpeed: `TopSpeed: ${this.topSpeed}\n`,
+      color: `Color: ${this.color}\n`,
+      towingCapacity: `Tow Capacity: ${this.towingCapacity}\n`,
+    }
+    const vehicleDetailsString = `${Object.values(vehicleDetails).join(' ')}`;
+    const wheelDetails : string = this.displayWheels;
+
+    console.log(`${vehicleDetailsString}\n${wheelDetails}`);
   }
 }
 

@@ -1,5 +1,5 @@
-import Vehicle from './Vehicle';
-import Wheel from './Wheel';
+import Vehicle from './Vehicle.js';
+import Wheel from './Wheel.js';
 
 class Motorbike extends Vehicle {
   vin: string;

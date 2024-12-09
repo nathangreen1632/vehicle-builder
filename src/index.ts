@@ -7,6 +7,13 @@ import Truck from './classes/Truck';
 
 const vehicles = [];
 
+const truck1Wheels: Wheel[] = [
+  new Wheel(18, 'Mickey Thompson Baja Boss A/T'),
+  new Wheel(18, 'Mickey Thompson Baja Boss A/T'),
+  new Wheel(18, 'Mickey Thompson Baja Boss A/T'),
+  new Wheel(18, 'Mickey Thompson Baja Boss A/T'),
+];
+
 const truck1 = new Truck(
   Cli.generateVin(),
   'Red',
@@ -15,10 +22,16 @@ const truck1 = new Truck(
   2020,
   6500,
   120,
-  [],
-  10000,
+  truck1Wheels,
+  12000,
 );
 
+const car1Wheels: Wheel[] = [
+  new Wheel(16, 'Michelin Pilot Sport 4S'),
+  new Wheel(16, 'Michelin Pilot Sport 4S'),
+  new Wheel(16, 'Michelin Pilot Sport 4S'),
+  new Wheel(16, 'Michelin Pilot Sport 4S'),
+];
 const car1 = new Car(
   Cli.generateVin(),
   'Blue',
@@ -27,7 +40,7 @@ const car1 = new Car(
   2021,
   3000,
   130,
-  [],
+  car1Wheels,
 );
 
 const motorbike1Wheels: Wheel[] = [
@@ -44,8 +57,6 @@ const motorbike1 = new Motorbike(
   130,
   motorbike1Wheels,
 );
-
-// console.log(motorbike1.wheelie());
 
 vehicles.push(truck1);
 vehicles.push(car1);

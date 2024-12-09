@@ -1,8 +1,8 @@
 import inquirer from 'inquirer';
-import Truck from './Truck';
-import Car from './Car';
-import Motorbike from './Motorbike';
-import Wheel from './Wheel';
+import Truck from './Truck.js';
+import Car from './Car.js';
+import Motorbike from './Motorbike.js';
+import Wheel from './Wheel.js';
 
 class Cli {
   vehicles: (Car | Truck | Motorbike)[];
@@ -110,12 +110,7 @@ class Cli {
           parseInt(answers.year),
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
-          [
-            new Wheel(17, 'Michelin'),
-            new Wheel(17, 'Michelin'),
-            new Wheel(17, 'Michelin'),
-            new Wheel(17, 'Michelin'),
-          ],
+          [],
         );
         this.vehicles.push(car);
         this.selectedVehicleVin = car.vin;
@@ -243,10 +238,7 @@ class Cli {
           parseInt(answers.year),
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
-          [
-            new Wheel (18, 'Metzeler Cruistec'),
-            new Wheel (18, 'Metzeler Cruistec'),
-          ],
+          [],
         );
         this.vehicles.push(motorbike);
         this.selectedVehicleVin = motorbike.vin;

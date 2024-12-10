@@ -53,7 +53,7 @@ const motorbike1 = new Motorbike(
   'Harley Davidson',
   'Sportster',
   2025,
-  74,
+  740,
   130,
   motorbike1Wheels,
 );

@@ -238,7 +238,10 @@ class Cli {
           parseInt(answers.year),
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
-          [],
+          [
+            new Wheel(answers.frontWheelDiameter, answers.frontWheelBrand),
+            new Wheel(answers.rearWheelDiameter, answers.rearWheelBrand)
+          ],
         );
         this.vehicles.push(motorbike);
         this.selectedVehicleVin = motorbike.vin;
@@ -305,7 +308,9 @@ class Cli {
         if (answers.action === 'Print details') {
           for (let i: number = 0; i < this.vehicles.length; i++) {
             if (this.vehicles[i].vin === this.selectedVehicleVin) {
+              console.log('---------------------------------')
               this.vehicles[i].printDetails();
+              console.log('---------------------------------')
             }
           }
         } else if (answers.action === 'Start vehicle') {

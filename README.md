@@ -125,3 +125,4 @@ This project is licensed under the MIT license. Click [here](https://opensource.
 If you have any questions, please feel free to contact me on GitHub at [nathangreen1632](https://github.com/nathangreen1632).
 
 ## Video Tutorial
+[Watch the video on YouTube](https://youtu.be/6qlrd8L_s4k)
